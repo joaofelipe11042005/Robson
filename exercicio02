@@ -1,0 +1,62 @@
+using ConsoleApp2;
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Aluno aluno = new Aluno();
+        aluno.matricula = 1;
+        aluno.nome = "João delas";
+        aluno.idade = 20;
+
+        Professor professor = new Professor();
+        professor.codigo = 10;
+        professor.nome = "Carlos Souza";
+        professor.formacao = "Matemática";
+
+        Disciplina disciplina = new Disciplina();
+        disciplina.codigo = 100;
+        disciplina.nome = "Matemática";
+        disciplina.cargaHoraria = 80;
+
+        Notas notas = new Notas();
+        notas.nota1 = 8;
+        notas.nota2 = 6;
+        notas.nota3 = 7;
+
+        Boletim boletim = new Boletim();
+        boletim.aluno = aluno;
+        boletim.professor = professor;
+        boletim.disciplina = disciplina;
+        boletim.notas = notas;
+
+        double media = (notas.nota1 + notas.nota2 + notas.nota3) / 3;
+
+        string situacao;
+
+        if (media >= 7)
+        {
+            situacao = "Aprovado";
+        }
+        else
+        {
+            situacao = "Reprovado";
+        }
+
+        Console.WriteLine("Aluno: " + aluno.nome);
+        Console.WriteLine("Disciplina: " + disciplina.nome);
+        Console.WriteLine("Professor: " + professor.nome);
+
+        Console.WriteLine();
+
+        Console.WriteLine("Nota 1: " + notas.nota1);
+        Console.WriteLine("Nota 2: " + notas.nota2);
+        Console.WriteLine("Nota 3: " + notas.nota3);
+
+        Console.WriteLine();
+
+        Console.WriteLine("Média: " + media);
+        Console.WriteLine("Situação: " + situacao);
+    }
+}
